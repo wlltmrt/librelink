@@ -15,8 +15,8 @@ BASE_URL_LIST: Final = {
     "Global": "https://api.libreview.io",
     "Latin America": "https://api-la.libreview.io",
 }
-PRODUCT: Final = "llu.ios"
-VERSION_APP: Final = "4.11.0"
+PRODUCT = "llu.android"
+VERSION_APP = "4.7"
 GLUCOSE_VALUE_ICON: Final = "mdi:diabetes"
 GLUCOSE_TREND_ICON: Final = {
     1: "mdi:arrow-down-bold-box",
@@ -26,11 +26,11 @@ GLUCOSE_TREND_ICON: Final = {
     5: "mdi:arrow-up-bold-box",
 }
 GLUCOSE_TREND_MESSAGE: Final = {
-    1: "Decreasing fast",
+    1: "Decreasing Fast",
     2: "Decreasing",
     3: "Stable",
     4: "Increasing",
-    5: "Increasing fast",
+    5: "Increasing Fast",
 }
 
 CONF_PATIENT_ID: Final = "patient_id"

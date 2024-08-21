@@ -16,9 +16,4 @@ UNITS_OF_MEASUREMENT = (
         suggested_display_precision=0,
         from_mg_per_dl=lambda x: x,
     ),
-    UnitOfMeasurement(
-        unit_of_measurement="mmol/L",
-        suggested_display_precision=1,
-        from_mg_per_dl=lambda x: x / 18,
-    ),
 )
