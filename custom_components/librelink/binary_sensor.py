@@ -35,7 +35,6 @@ async def async_setup_entry(
     ]
     async_add_entities(sensors)
 
-
 class LibreLinkBinarySensor(LibreLinkSensorBase, BinarySensorEntity):
     """LibreLink Binary Sensor class."""
 
@@ -43,7 +42,6 @@ class LibreLinkBinarySensor(LibreLinkSensorBase, BinarySensorEntity):
     def device_class(self) -> str:
         """Return the class of this device."""
         return BinarySensorDeviceClass.SAFETY
-
 
 class HighSensor(LibreLinkBinarySensor):
     """High Sensor class."""
@@ -57,7 +55,6 @@ class HighSensor(LibreLinkBinarySensor):
     def is_on(self) -> bool:
         """Return true if the binary_sensor is on."""
         return self._data.measurement.value >= self._data.target.high
-
 
 class LowSensor(LibreLinkBinarySensor):
     """Low Sensor class."""

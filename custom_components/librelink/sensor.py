@@ -7,6 +7,7 @@ from homeassistant.components.sensor import (
     SensorEntity,
     SensorStateClass,
 )
+
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_UNIT_OF_MEASUREMENT, CONF_USERNAME
 from homeassistant.core import HomeAssistant
@@ -24,9 +25,9 @@ from .const import (
     NAME,
     VERSION,
 )
+
 from .coordinator import LibreLinkDataUpdateCoordinator
 from .units import UNITS_OF_MEASUREMENT, UnitOfMeasurement
-
 
 async def async_setup_entry(
     hass: HomeAssistant,
