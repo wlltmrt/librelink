@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
-import socket
 
+import socket
 import aiohttp
 
 from .const import (
@@ -90,7 +90,6 @@ class Patient:
 class LibreLinkAPIError(Exception):
     """Base class for exceptions in this module."""
 
-
 class LibreLinkAPIAuthenticationError(LibreLinkAPIError):
     """Exception raised when the API authentication fails."""
 
@@ -98,14 +97,12 @@ class LibreLinkAPIAuthenticationError(LibreLinkAPIError):
         """Initialize the API error."""
         super().__init__("Invalid credentials")
 
-
 class LibreLinkAPIConnectionError(LibreLinkAPIError):
     """Exception raised when the API connection fails."""
 
     def __init__(self, message: str = None) -> None:
         """Initialize the API error."""
         super().__init__(message or "Connection error")
-
 
 class LibreLinkAPI:
     """API class for communication with the LibreLink API."""
