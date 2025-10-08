@@ -155,6 +155,8 @@ class LibreLinkAPI:
         headers = {
             "product": PRODUCT,
             "version": VERSION_APP,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 10; Mobile)",
         }
         if authenticated:
             headers["Authorization"] = "Bearer " + self._token
