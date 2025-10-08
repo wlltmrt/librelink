@@ -110,6 +110,7 @@ class LibreLinkAPI:
     def __init__(self, base_url: str, session: aiohttp.ClientSession) -> None:
         """Initialize the API client."""
         self._token = None
+        self._account_id = None
         self._session = session
         self.base_url = base_url
 
@@ -143,7 +144,10 @@ class LibreLinkAPI:
         if response["status"] == 2:
             raise LibreLinkAPIAuthenticationError()
 
-        self._token = response["data"]["authTicket"]["token"]
+        data := response["data"]
+
+        self._token = data["authTicket"]["token"]
+        self._account_id = hashlib.sha256(data["user"]['id'].encode()).hexdigest()
 
     async def _call_api(
         self,
@@ -160,6 +164,7 @@ class LibreLinkAPI:
         }
         if authenticated:
             headers["Authorization"] = "Bearer " + self._token
+            headers["Account-Id"] = self._account_id
 
         call_method = self._session.post if data else self._session.get
         try:
