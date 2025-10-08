@@ -7,6 +7,7 @@ from datetime import UTC, datetime, timedelta
 
 import socket
 import aiohttp
+import hashlib
 
 from .const import (
     API_TIME_OUT_SECONDS,
