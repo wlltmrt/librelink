@@ -145,10 +145,8 @@ class LibreLinkAPI:
         if response["status"] == 2:
             raise LibreLinkAPIAuthenticationError()
 
-        data := response["data"]
-
-        self._token = data["authTicket"]["token"]
-        self._account_id = hashlib.sha256(data["user"]['id'].encode()).hexdigest()
+        self._token = response["data"]["authTicket"]["token"]
+        self._account_id = hashlib.sha256(response["data"]["user"]['id'].encode()).hexdigest()
 
     async def _call_api(
         self,
