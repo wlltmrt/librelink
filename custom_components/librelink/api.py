@@ -156,10 +156,13 @@ class LibreLinkAPI:
     ) -> any:
         """Get information from the API."""
         headers = {
-            "product": PRODUCT,
-            "version": VERSION_APP,
+            "Accept-Encoding": "gzip",
+            "Cache-Control": "no-cache",
+            "Connection": "Keep-Alive",
             "Content-Type": "application/json",
             "User-Agent": "Mozilla/5.0 (Linux; Android 10; Mobile)",
+            "product": PRODUCT,
+            "version": VERSION_APP,
         }
         if authenticated:
             headers["Authorization"] = "Bearer " + self._token

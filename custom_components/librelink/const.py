@@ -7,7 +7,7 @@ LOGGER: Logger = getLogger(__package__)
 
 NAME: Final = "LibreLink"
 DOMAIN: Final = "librelink"
-VERSION: Final = "1.2.3"
+VERSION: Final = "1.2.5"
 ATTRIBUTION: Final = "Data provided by https://libreview.com"
 LOGIN_URL: Final = "/llu/auth/login"
 CONNECTION_URL: Final = "/llu/connections"
@@ -36,4 +36,4 @@ GLUCOSE_TREND_MESSAGE: Final = {
 CONF_PATIENT_ID: Final = "patient_id"
 
 REFRESH_RATE_MIN: Final = 1
-API_TIME_OUT_SECONDS: Final = 20
+API_TIME_OUT_SECONDS: Final = 30
